@@ -1,10 +1,10 @@
-# 🫀 Projeto de Clusterização: Análise de Insuficiência Cardíaca
+#  Projeto de Clusterização: Análise de Insuficiência Cardíaca
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## 📋 Índice
+##  Índice
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Objetivos](#objetivos)
@@ -19,28 +19,28 @@
 
 ---
 
-## 🎯 Sobre o Projeto
+##  Sobre o Projeto
 
 Este projeto de **Data Science** utiliza técnicas de **aprendizado não supervisionado** para identificar perfis distintos de pacientes com insuficiência cardíaca. Através do algoritmo **K-Means**, agrupamos pacientes com características clínicas semelhantes, possibilitando:
 
-- 📊 Identificação de padrões em dados médicos
-- 🔍 Descoberta de subgrupos de pacientes com perfis similares
-- 🎯 Classificação automática de novos pacientes
-- 💡 Insights para tomada de decisão clínica
+-  Identificação de padrões em dados médicos
+-  Descoberta de subgrupos de pacientes com perfis similares
+-  Classificação automática de novos pacientes
+-  Insights para tomada de decisão clínica
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
-1. ✅ **Normalizar dados clínicos** para garantir que todas as features tenham a mesma escala
-2. ✅ **Determinar o número ótimo de clusters** usando o Método do Cotovelo (Elbow Method)
-3. ✅ **Treinar modelo de clusterização** com K-Means
-4. ✅ **Descrever características** de cada cluster identificado
-5. ✅ **Classificar novos pacientes** em clusters existentes
+1.  **Normalizar dados clínicos** para garantir que todas as features tenham a mesma escala
+2.  **Determinar o número ótimo de clusters** usando o Método do Cotovelo (Elbow Method)
+3.  **Treinar modelo de clusterização** com K-Means
+4.  **Descrever características** de cada cluster identificado
+5.  **Classificar novos pacientes** em clusters existentes
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 **Nome:** Heart Failure Clinical Records Dataset  
 **Fonte:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Heart+failure+clinical+records)  
@@ -68,7 +68,7 @@ Este projeto de **Data Science** utiliza técnicas de **aprendizado não supervi
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 - **Python 3.8+**
 - **scikit-learn** - Algoritmos de ML e normalização
@@ -79,7 +79,7 @@ Este projeto de **Data Science** utiliza técnicas de **aprendizado não supervi
 
 ---
 
-## 🚀 Instalação
+##  Instalação
 
 ### Pré-requisitos
 
@@ -106,20 +106,20 @@ pip install -r requirements.txt
 
 ---
 
-## 📝 Pipeline de Execução
+##  Pipeline de Execução
 
 Os scripts devem ser executados **na ordem sequencial** para garantir o funcionamento correto do pipeline:
 
-### 1️⃣ **Normalização dos Dados**
+### 1️ **Normalização dos Dados**
 ```bash
 python normalizar.py
 ```
 
 **O que faz:**
-- 📥 Lê o dataset bruto (`heart_failure_clinical_records_dataset.csv`)
-- 🗑️ Remove a coluna alvo (`DEATH_EVENT`)
-- 📐 Aplica normalização **MinMaxScaler** (escala 0-1)
-- 💾 Salva o modelo de normalização e dados processados
+-  Lê o dataset bruto (`heart_failure_clinical_records_dataset.csv`)
+-  Remove a coluna alvo (`DEATH_EVENT`)
+-  Aplica normalização **MinMaxScaler** (escala 0-1)
+-  Salva o modelo de normalização e dados processados
 
 **Arquivos gerados:**
 - `modelo_normalizador_heart.model` - Modelo de normalização para uso futuro
@@ -127,17 +127,17 @@ python normalizar.py
 
 ---
 
-### 2️⃣ **Clusterização e Determinação do K Ótimo**
+### 2️ **Clusterização e Determinação do K Ótimo**
 ```bash
 python clusterizar.py
 ```
 
 **O que faz:**
-- 📊 Carrega os dados pré-processados
-- 🔍 Testa clusters de K=2 até K=50
-- 📈 Aplica o **Método do Cotovelo** para encontrar K ótimo
-- 🤖 Treina o modelo KMeans com o K determinado
-- 💾 Salva o modelo treinado e visualização
+-  Carrega os dados pré-processados
+-  Testa clusters de K=2 até K=50
+-  Aplica o **Método do Cotovelo** para encontrar K ótimo
+-  Treina o modelo KMeans com o K determinado
+-  Salva o modelo treinado e visualização
 
 **Arquivos gerados:**
 - `cluster_heart.model` - Modelo KMeans treinado
@@ -150,31 +150,31 @@ Número ótimo de clustes: 20
 
 ---
 
-### 3️⃣ **Descrição dos Clusters**
+### 3️ **Descrição dos Clusters**
 ```bash
 python descrever_centroides_simplificado.py
 ```
 
 **O que faz:**
-- 📂 Carrega os modelos salvos
-- 🔄 Reverte a normalização dos centroides
-- 📋 Exibe características médias de cada cluster
-- 💡 Permite interpretação dos grupos identificados
+-  Carrega os modelos salvos
+-  Reverte a normalização dos centroides
+-  Exibe características médias de cada cluster
+-  Permite interpretação dos grupos identificados
 
 **Saída:** Tabela com características de todos os 20 clusters
 
 ---
 
-### 4️⃣ **Classificação de Novo Paciente**
+### 4️ **Classificação de Novo Paciente**
 ```bash
 python processar_paciente_desconhecido.py
 ```
 
 **O que faz:**
-- 👤 Define dados de um paciente exemplo
-- 📐 Normaliza os dados do novo paciente
-- 🎯 Classifica o paciente em um cluster
-- 📊 Exibe o cluster atribuído e suas características
+-  Define dados de um paciente exemplo
+-  Normaliza os dados do novo paciente
+-  Classifica o paciente em um cluster
+-  Exibe o cluster atribuído e suas características
 
 **Saída esperada:**
 ```
@@ -193,47 +193,47 @@ anaemia: 0.06
 
 ---
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 Atividade-2-Data-Science/
 │
 ├── 📄 heart_failure_clinical_records_dataset.csv  # Dataset original
 │
-├── 🐍 normalizar.py                               # Script 1: Normalização
-├── 🐍 clusterizar.py                              # Script 2: Clusterização
-├── 🐍 descrever_centroides_simplificado.py        # Script 3: Análise clusters
-├── 🐍 processar_paciente_desconhecido.py          # Script 4: Classificação
+├──  normalizar.py                               # Script 1: Normalização
+├──  clusterizar.py                              # Script 2: Clusterização
+├──  descrever_centroides_simplificado.py        # Script 3: Análise clusters
+├──  processar_paciente_desconhecido.py          # Script 4: Classificação
 │
-├── 💾 modelo_normalizador_heart.model             # Modelo de normalização (gerado)
-├── 💾 cluster_heart.model                         # Modelo KMeans (gerado)
-├── 📊 dados_preprocessados_heart.csv              # Dados normalizados (gerado)
-├── 📈 distorcoes_heart.jpg                        # Gráfico do cotovelo (gerado)
+├──  modelo_normalizador_heart.model             # Modelo de normalização (gerado)
+├──  cluster_heart.model                         # Modelo KMeans (gerado)
+├──  dados_preprocessados_heart.csv              # Dados normalizados (gerado)
+├──  distorcoes_heart.jpg                        # Gráfico do cotovelo (gerado)
 │
-└── 📖 Readme.md                                   # Documentação
+└──  Readme.md                                   # Documentação
 ```
 
 ---
 
-## 📊 Resultados
+##  Resultados
 
 ### Número Ótimo de Clusters
 Através do **Método do Cotovelo**, foi determinado que **K = 20** é o número ótimo de clusters para este dataset, equilibrando:
-- ✅ Boa separação entre grupos
-- ✅ Interpretabilidade dos clusters
-- ✅ Variância explicada
+-  Boa separação entre grupos
+-  Interpretabilidade dos clusters
+-  Variância explicada
 
 ### Insights dos Clusters
 Os 20 clusters identificados representam diferentes perfis de pacientes, considerando:
-- 👥 Características demográficas (idade, sexo)
-- 🏥 Condições pré-existentes (diabetes, anemia, hipertensão)
-- 🔬 Marcadores laboratoriais (creatinina, sódio, plaquetas)
-- 💓 Função cardíaca (fração de ejeção)
-- 📅 Tempo de acompanhamento
+-  Características demográficas (idade, sexo)
+-  Condições pré-existentes (diabetes, anemia, hipertensão)
+-  Marcadores laboratoriais (creatinina, sódio, plaquetas)
+-  Função cardíaca (fração de ejeção)
+-  Tempo de acompanhamento
 
 ---
 
-## 💡 Como Usar
+##  Como Usar
 
 ### Classificar um Novo Paciente
 
@@ -263,27 +263,14 @@ python processar_paciente_desconhecido.py
 
 ---
 
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Para contribuir:
-
-1. Faça um Fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/NovaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/NovaFeature`)
-5. Abra um Pull Request
-
-
----
-
-## 👤 Autor
+##  Autor
 
 **João Pedro**  
 GitHub: [@joaopedro-dev-cwb](https://github.com/joaopedro-dev-cwb)
 
 ---
 
-## 📚 Referências
+##  Referências
 
 - [Scikit-learn K-Means Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
 - [Heart Failure Dataset - UCI](https://archive.ics.uci.edu/ml/datasets/Heart+failure+clinical+records)
