@@ -108,7 +108,7 @@ pip install -r requirements.txt
 
 Os scripts devem ser executados **na ordem sequencial** para garantir o funcionamento correto do pipeline:
 
-### 1️ **Normalização dos Dados**
+### 1️. **Normalização dos Dados**
 ```bash
 python normalizar.py
 ```
@@ -125,7 +125,7 @@ python normalizar.py
 
 ---
 
-### 2️ **Clusterização e Determinação do K Ótimo**
+### 2️. **Clusterização e Determinação do K Ótimo**
 ```bash
 python clusterizar.py
 ```
@@ -148,7 +148,7 @@ Número ótimo de clustes: 20
 
 ---
 
-### 3️ **Descrição dos Clusters**
+### 3️. **Descrição dos Clusters**
 ```bash
 python descrever_centroides_simplificado.py
 ```
@@ -163,7 +163,7 @@ python descrever_centroides_simplificado.py
 
 ---
 
-### 4️ **Classificação de Novo Paciente**
+### 4️. **Classificação de Novo Paciente**
 ```bash
 python processar_paciente_desconhecido.py
 ```
@@ -263,7 +263,7 @@ python processar_paciente_desconhecido.py
 
 ##  Autor
 
-**João Pedro**  
+**João Pedro dos Santos**  
 GitHub: [@joaopedro-dev-cwb](https://github.com/joaopedro-dev-cwb)
 
 ---
