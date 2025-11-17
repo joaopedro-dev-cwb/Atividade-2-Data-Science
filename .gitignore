@@ -1,0 +1,20 @@
+# Ambiente Virtual do Python
+.venv/
+venv/
+*.venv
+
+# Arquivos de modelo (binários gerados)
+*.model
+
+# Dados processados (gerados pelos scripts)
+dados_preprocessados_*.csv
+
+# Gráficos gerados
+*.jpg
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Configurações do VSCode (opcional, mas recomendado)
+.vscode/
